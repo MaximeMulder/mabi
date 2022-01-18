@@ -1,7 +1,7 @@
 pub const NOP:   u16 = 0;
-pub const LOAD:  u16 = 1;
-pub const READ:  u16 = 2;
-pub const WRITE: u16 = 3;
+pub const CONST: u16 = 1;
+pub const LOAD:  u16 = 2;
+pub const STORE: u16 = 3;
 pub const AND:   u16 = 4;
 pub const OR:    u16 = 5;
 pub const XOR:   u16 = 6;

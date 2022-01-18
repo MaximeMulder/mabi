@@ -11,11 +11,11 @@ impl Memory {
         }
     }
 
-    pub fn read(&mut self, address: u16) -> u16 {
+    pub fn load(&mut self, address: u16) -> u16 {
         self.values[address as usize]
     }
 
-    pub fn write(&mut self, address: u16, value: u16) {
+    pub fn store(&mut self, address: u16, value: u16) {
         self.values[address as usize] = value;
     }
 }

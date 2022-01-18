@@ -3,9 +3,9 @@
 | Index | Name  | Next | Pop       | Push |
 |-------|-------|------|-----------|------|
 | 0     | NOP   | -    | -         | -    |
-| 1     | LOAD  | val  | -         | val  |
-| 2     | READ  | -    | addr      | val  |
-| 3     | WRITE | -    | addr, val | -    |
+| 1     | CONST | val  | -         | val  |
+| 2     | LOAD  | -    | addr      | val  |
+| 3     | STORE | -    | addr, val | -    |
 | 4     | AND   | -    | a, b      | res  |
 | 5     | OR    | -    | a, b      | res  |
 | 6     | XOR   | -    | a, b      | res  |

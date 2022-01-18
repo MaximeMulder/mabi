@@ -7,19 +7,19 @@ pub fn machine(program: &mut Program, memory: &mut Memory, stack: &mut Stack) {
     loop {
         match program.next() {
             NOP => {},
-            LOAD => {
+            CONST => {
                 let value = program.next();
                 stack.push(value);
             },
-            READ => {
+            LOAD => {
                 let address = stack.pop();
-                let value = memory.read(address);
+                let value = memory.load(address);
                 stack.push(value);
             },
-            WRITE => {
+            STORE => {
                 let value = stack.pop();
                 let address = stack.pop();
-                memory.write(address, value);
+                memory.store(address, value);
             },
             AND => {
                 let b = stack.pop();

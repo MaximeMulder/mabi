@@ -1,4 +1,3 @@
-use crate::error;
 use crate::program::Program;
 use crate::set::*;
 use crate::stack::Stack;
@@ -60,7 +59,7 @@ pub fn machine(program: &mut Program, memory: &mut Memory, stack: &mut Stack) {
                 let b = stack.pop();
                 let a = stack.pop();
                 if b == 0 {
-                    error("Division by zero.");
+                    panic!("Division by zero.");
                 }
 
                 stack.push(a / b);
@@ -84,8 +83,12 @@ pub fn machine(program: &mut Program, memory: &mut Memory, stack: &mut Stack) {
             PRINT => {
                 println!("{}", stack.pop());
             },
-            END => return,
-            _ => error("Unknown instruction."),
+            END => {
+                return;
+            },
+            instruction => {
+                panic!("Unknown instruction 0x{:x}.", instruction);
+            },
         }
     }
 }

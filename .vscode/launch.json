@@ -19,26 +19,7 @@
                     "kind": "bin"
                 }
             },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'mabi'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=mabi",
-                    "--package=mabi"
-                ],
-                "filter": {
-                    "name": "mabi",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
+            "args": ["./samples/test.mabi"],
             "cwd": "${workspaceFolder}"
         }
     ]

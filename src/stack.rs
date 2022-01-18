@@ -1,5 +1,3 @@
-use crate::error;
-
 pub struct Stack {
     values: Vec<u16>,
 }
@@ -16,6 +14,6 @@ impl Stack {
     }
 
     pub fn pop(&mut self) -> u16 {
-        self.values.pop().unwrap_or_else(|| error("Stack error."))
+        self.values.pop().unwrap_or_else(|| panic!("Stack error."))
     }
 }

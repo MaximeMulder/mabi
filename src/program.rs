@@ -1,5 +1,3 @@
-use crate::error;
-
 pub struct Program {
     instructions: Box<[u16]>,
     counter: u16,
@@ -16,7 +14,7 @@ impl Program {
     pub fn next(&mut self) -> u16 {
         let counter = self.counter as usize;
         if counter >= self.instructions.len() {
-            error("Program error.");
+            panic!("Program error.");
         }
 
         let instruction = self.instructions[counter];

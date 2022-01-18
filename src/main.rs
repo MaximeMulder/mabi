@@ -1,39 +1,27 @@
+mod file;
 mod machine;
 mod memory;
 mod program;
 mod set;
 mod stack;
 
-use std::process::exit;
+use std::env::args;
 
-use stack::Stack;
-use program::Program;
+use file::read;
 use machine::machine;
 use memory::Memory;
-use set::*;
+use program::Program;
+use stack::Stack;
 
 fn main() {
-    let instructions = [
-        LOAD, 0,
-        LOAD, 3,
-        WRITE,
-        LOAD, 5,
-        LOAD, 6,
-        ADD,
-        LOAD, 0,
-        READ,
-        SUB,
-        PRINT,
-        END,
-    ];
+    let arguments = args().collect::<Box<[_]>>();
+    if arguments.len() != 2 {
+        panic!("Arguments error.");
+    }
 
-    let mut program = Program::new(Box::new(instructions));
+    let instructions = read(&arguments[1]);
+    let mut program = Program::new(instructions);
     let mut memory = Memory::new();
     let mut stack = Stack::new();
     machine(&mut program, &mut memory, &mut stack);
-}
-
-fn error(message: &str) -> ! {
-    eprintln!("ERROR: {}", message);
-    exit(1);
 }

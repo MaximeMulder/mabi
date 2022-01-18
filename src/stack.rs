@@ -1,5 +1,7 @@
+use crate::error;
+
 pub struct Stack {
-    values: Vec<u8>,
+    values: Vec<u16>,
 }
 
 impl Stack {
@@ -9,11 +11,11 @@ impl Stack {
         }
     }
 
-    pub fn push(&mut self, value: u8) {
+    pub fn push(&mut self, value: u16) {
         self.values.push(value);
     }
 
-    pub fn pop(&mut self) -> u8 {
-        self.values.pop().unwrap_or_else(|| panic!("Stack error"))
+    pub fn pop(&mut self) -> u16 {
+        self.values.pop().unwrap_or_else(|| error("Stack error."))
     }
 }

@@ -1,0 +1,17 @@
+pub const NOP:   u16 = 0;
+pub const LOAD:  u16 = 1;
+pub const READ:  u16 = 2;
+pub const WRITE: u16 = 3;
+pub const AND:   u16 = 4;
+pub const OR:    u16 = 5;
+pub const XOR:   u16 = 6;
+pub const NOT:   u16 = 7;
+pub const ADD:   u16 = 8;
+pub const SUB:   u16 = 9;
+pub const MUL:   u16 = 10;
+pub const DIV:   u16 = 11;
+pub const REM:   u16 = 12;
+pub const JUMP:  u16 = 13;
+pub const IF:    u16 = 14;
+pub const PRINT: u16 = 15;
+pub const END:   u16 = 16;

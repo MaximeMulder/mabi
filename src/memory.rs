@@ -1,7 +1,7 @@
 const MEMORY_SIZE: usize = 65536;
 
 pub struct Memory {
-    values: [u16; MEMORY_SIZE],
+    values: [u32; MEMORY_SIZE],
 }
 
 impl Memory {
@@ -11,11 +11,11 @@ impl Memory {
         }
     }
 
-    pub fn load(&mut self, address: u16) -> u16 {
-        self.values[address as usize]
+    pub fn load(&mut self, address: usize) -> u32 {
+        self.values[address]
     }
 
-    pub fn store(&mut self, address: u16, value: u16) {
-        self.values[address as usize] = value;
+    pub fn store(&mut self, address: usize, value: u32) {
+        self.values[address] = value;
     }
 }

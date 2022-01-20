@@ -1,5 +1,5 @@
 pub struct Stack {
-    values: Vec<u16>,
+    values: Vec<u32>,
 }
 
 impl Stack {
@@ -9,11 +9,11 @@ impl Stack {
         }
     }
 
-    pub fn push(&mut self, value: u16) {
+    pub fn push(&mut self, value: u32) {
         self.values.push(value);
     }
 
-    pub fn pop(&mut self) -> u16 {
+    pub fn pop(&mut self) -> u32 {
         self.values.pop().unwrap_or_else(|| panic!("Stack error."))
     }
 }

@@ -5,7 +5,7 @@ mod program;
 mod set;
 mod stack;
 
-use std::env::args;
+use std::env;
 
 use file::read;
 use machine::machine;
@@ -14,7 +14,7 @@ use program::Program;
 use stack::Stack;
 
 fn main() {
-    let arguments = args().collect::<Box<[_]>>();
+    let arguments = env::args().collect::<Box<[_]>>();
     if arguments.len() != 2 {
         panic!("Arguments error.");
     }
@@ -23,5 +23,5 @@ fn main() {
     let mut program = Program::new(instructions);
     let mut memory = Memory::new();
     let mut stack = Stack::new();
-    machine(&mut program, &mut memory, &mut stack);
+    machine(&mut program, &mut stack, &mut memory);
 }

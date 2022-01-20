@@ -12,7 +12,7 @@ Mabi is not designed to be very optimized, but rather to have a simple and reada
 
 The architecture of Mabi is subject to change.
 
-Mabi is a load-store, stack machine composed of three parts: the program, the stack, and the memory.
+Mabi is a load-store stack machine composed of three parts: the program, the stack, and the memory.
 
 The program is composed of one-byte instructions, which can optionally have four-byte parameters, written in big-endian.
 
@@ -20,7 +20,7 @@ The stack holds four-byte values produced and consumed by the instructions.
 
 The memory can contain four-byte values load and stored by the instructions.
 
-Mabi uses an Harvard architecture, with a different addresses for the program and the memory. This ensures the program cannot modify itself or generate code, allowing safe jumps to arbitrary addresses.
+Mabi uses an Harvard architecture, with a different addressing for the program and the memory. This ensures the program cannot modify itself or generate code, allowing safe jumps to arbitrary addresses.
 
 | Opcode | Name  | Parameters | Input      | Output |
 |--------|-------|------------|------------|--------|

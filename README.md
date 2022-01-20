@@ -20,7 +20,7 @@ The stack holds four-byte values produced and consumed by the instructions.
 
 The memory can contain four-byte values stored and loaded by the instructions.
 
-Mabi uses an Harvard architecture, with a different addressing for the program and the memory. This ensures the program cannot modify itself or generate code, allowing safe jumps to arbitrary addresses.
+Mabi uses a Harvard architecture, with a different addressing for the program and the memory. This ensures the program cannot modify itself or generate code, allowing safe jumps to arbitrary addresses.
 
 | Opcode | Name  | Parameters | Input      | Output |
 |--------|-------|------------|------------|--------|

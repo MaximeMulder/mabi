@@ -18,7 +18,7 @@ The program is composed of one-byte instructions, which can optionally have four
 
 The stack holds four-byte values produced and consumed by the instructions.
 
-The memory can contain four-byte values load and stored by the instructions.
+The memory can contain four-byte values loaded and stored by the instructions.
 
 Mabi uses an Harvard architecture, with a different addressing for the program and the memory. This ensures the program cannot modify itself or generate code, allowing safe jumps to arbitrary addresses.
 
